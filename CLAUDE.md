@@ -22,11 +22,11 @@ internal/engine/    rules engine. Pure functions, imports only money. No DB, HTT
 internal/ai/        LLM explanation + guard. Depends on engine types
 internal/store/     Postgres via sqlc. Migrations in internal/store/migrations
 internal/service/   use cases; owns interfaces for store and ai
-internal/http/      Echo handlers: parse, call service, render. No business logic
+internal/httpapi/   Echo handlers: parse, call service, render. No business logic
 web/                React + TypeScript (Vite)
 ```
 
-- Dependencies point inward: http -> service -> engine/store/ai interfaces. Never import `http` or `store` from `engine`.
+- Dependencies point inward: httpapi -> service -> engine/store/ai interfaces. Never import `httpapi` or `store` from `engine`.
 - Define interfaces in the package that uses them, not the one that implements them.
 - Pass `time.Time` ("now") and thresholds into the engine as inputs so tests are deterministic.
 
