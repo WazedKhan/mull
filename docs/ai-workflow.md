@@ -59,7 +59,7 @@ make check output / test names / screenshot
 ## Prompt patterns that work
 
 - **Scope + check:** "Implement rule 3 in internal/engine. Cases: price above remaining_free gives Wait; equal gives no match. Run make test-engine and fix failures."
-- **Point to a pattern:** "Add the goals handler following the same structure as internal/http/settings.go."
+- **Point to a pattern:** "Add the goals handler following the same structure as internal/httpapi/settings.go."
 - **Symptom + location + fixed state:** "POST /checks returns 500 when there are no goals. Look at service/check.go. Write a failing test first, then fix."
 - **Interview me:** for a fuzzy feature, "Interview me about X, ask about edge cases and tradeoffs, then write the plan."
 - **Root cause:** "Fix the cause, don't silence the error or skip the test."
