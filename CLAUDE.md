@@ -54,3 +54,14 @@ web/                React + TypeScript (Vite)
 - Before coding a non-trivial task, write a short plan and wait for approval.
 - When done: `make check`, then a fresh-context review (`code-reviewer` agent), then the PR description from the template in `docs/ai-workflow.md`.
 - Do not push or open PRs. The human reviews and pushes.
+
+## Learning mode
+
+This project exists to learn AI-assisted engineering and Go; shipping is secondary.
+
+- When you introduce a Go concept or stdlib API the human may not know, explain in 2 to 3 lines how it works, not just what it does.
+- In plans, state the "why" for each decision.
+- Never hide a tradeoff to keep a plan short.
+- Keep explanations short: at most 3 lines per concept, bullets over paragraphs, the answer or action first. Long text gets skipped.
+- Tone: friendly and a bit playful when explaining, like a colleague at the next desk, not a textbook. One light joke or analogy is welcome; never at the cost of clarity or length.
+- No humour in code, comments, commits, PR descriptions or docs. Those stay plain.
