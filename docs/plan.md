@@ -2,14 +2,14 @@
 
 Each task is one branch and one PR, sized for a review you can finish in one sitting (target under ~300 changed lines, excluding generated code). Tasks run top to bottom; within a phase, later tasks depend on earlier ones unless noted. Ticket IDs (MULL-xx) are in `backlog.md`.
 
-Tick a task when its PR is merged. "Done when" is the check the AI must run and show.
+Tick a task in its own PR. "Done when" is the check the AI must run and show.
 
 ## Phase 0: Foundation (MULL-01)
 
 | ID | Task | Scope | Done when |
 | --- | --- | --- | --- |
-| [ ] T00 | Docs and rules | Add `CLAUDE.md`, `docs/*`, `.claude/agents/code-reviewer.md`, `.claude/skills/task/SKILL.md`, empty `docs/learnings.md` | Files render on GitHub |
-| [ ] T01 | Go API skeleton | `go mod init`, `cmd/api`, Echo server, `GET /healthz`, slog, config from env | Handler test for `/healthz` passes |
+| [x] T00 | Docs and rules | Add `CLAUDE.md`, `docs/*`, `.claude/agents/code-reviewer.md`, `.claude/skills/task/SKILL.md`, empty `docs/learnings.md` | Files render on GitHub |
+| [x] T01 | Go API skeleton | `go mod init`, `cmd/api`, Echo server, `GET /healthz`, slog, config from env | Handler test for `/healthz` passes |
 | [ ] T02 | Make, lint, CI | Makefile (`run`, `test`, `lint`, `check`), golangci-lint config, GitHub Actions running `make check` | CI green on a push |
 | [ ] T03 | Postgres and migrations | docker compose Postgres, goose wired, first empty migration, `make migrate` | `make migrate` runs clean twice |
 | [ ] T04 | Web skeleton | Vite React TS in `web/`, calls `/healthz`, ESLint, web build added to `make check` | Page shows "API ok" |
