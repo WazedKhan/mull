@@ -1,0 +1,11 @@
+version: "2"
+
+linters:
+  default: standard
+  enable:
+    - gocritic
+  settings:
+    gocritic:
+      # importShadow is off by default in gocritic, so enable it explicitly.
+      enabled-checks:
+        - importShadow

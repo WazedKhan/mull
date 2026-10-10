@@ -8,7 +8,7 @@ import (
 )
 
 // NewServer returns an Echo instance with middleware and routes registered.
-func NewServer(log *slog.Logger) *echo.Echo {
+func NewServer(logger *slog.Logger) *echo.Echo {
 	e := echo.New()
 	e.Use(middleware.Recover())
 	e.Use(middleware.RequestLoggerWithConfig(middleware.RequestLoggerConfig{
@@ -25,7 +25,7 @@ func NewServer(log *slog.Logger) *echo.Echo {
 			if v.Error != nil {
 				attrs = append(attrs, slog.String("err", v.Error.Error()))
 			}
-			log.LogAttrs(c.Request().Context(), levelFor(v.Status), "request", attrs...)
+			logger.LogAttrs(c.Request().Context(), levelFor(v.Status), "request", attrs...)
 			return nil
 		},
 	}))
